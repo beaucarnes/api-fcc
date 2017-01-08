@@ -1,8 +1,12 @@
 var express = require("express")
 var app = express()
+
+var short = require('./short');
+
 app.set('port', (process.env.PORT || 5000));
 
 
+app.use('/s', short);
 
 app.get('/whoami', function (req, res) {
   var ip =       req.headers['x-forwarded-for']
