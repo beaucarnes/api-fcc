@@ -10,6 +10,7 @@ app.set('port', (process.env.PORT || 5000));
 app.use('/s', short);
 
 app.get('/whoami', function (req, res) {
+  console.log("getting whoami")
   var ip =       req.headers['x-forwarded-for']
   var language = req.headers["accept-language"].split(',')[0];
   var software = req.headers['user-agent'].match(/\(([^)]+)\)/)[1]
