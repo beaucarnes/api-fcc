@@ -5,7 +5,7 @@ var router = express.Router();
 var path = require('path')
 var mongodb = require('mongodb');
 var MongoClient = mongodb.MongoClient;
-var url = process.env.MONGODB_URI || 'mongodb://localhost/database';
+var url = 'mongodb://localhost/database';
 
 router.get('/', function(req, res) {
   res.sendFile(path.join(__dirname + '/static/short.html'));
